@@ -27,26 +27,26 @@ var movies = [
 ];
 
 var Movie = React.createClass({
-  propTypes: {
-    movies: React.PropTypes.array.isRequired,
-  },
+	propTypes: {
+    		movies: React.PropTypes.array.isRequired,
+  	},
 
-  render: function() {
-    var contacts = this.props.movies.map(function(movie) {
-      return React.createElement('li', {key: movie.id},
-        React.createElement(MovieTitle, {movieTitle: movie}),
-        React.createElement(MovieDescription, {movieDesc: movie}),
-        React.createElement(MoviePoster, {moviePoster: movie})
-      );
-    });
+  	render: function() {
+    		var contacts = this.props.movies.map(function(movie) {
+      			return React.createElement('li', {key: movie.id},
+        			React.createElement(MovieTitle, {movieTitle: movie}),
+        			React.createElement(MovieDescription, {movieDesc: movie}),
+        			React.createElement(MoviePoster, {moviePoster: movie})
+      			);
+    		});
 
-    return (
-      React.createElement('div', {},
-      	React.createElement('h1', {}, 'Lista filmów:'),
-      	React.createElement('ul', {}, contacts)
-      )
-    );
-  }	
+    		return (
+      			React.createElement('div', {},
+      				React.createElement('h1', {}, 'Lista filmów:'),
+      				React.createElement('ul', {}, contacts)
+      			)
+    		);
+  	}	
 });
 
 var MovieTitle = React.createClass({
