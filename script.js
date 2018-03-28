@@ -1,5 +1,5 @@
 var movies = [
-	{
+  	{
     		id: 1,
 		title: 'Harry Potter',
 		desc: 'Film o czarodzieju',
@@ -27,56 +27,56 @@ var movies = [
 ];
 
 var Movie = React.createClass({
-	propTypes: {
+  	propTypes: {
     		movies: React.PropTypes.array.isRequired,
   	},
 
   	render: function() {
-    		var contacts = this.props.movies.map(function(movie) {
+    		var movies = this.props.movies.map(function(movie) {
       			return React.createElement('li', {key: movie.id},
-        			React.createElement(MovieTitle, {movieTitle: movie}),
-        			React.createElement(MovieDescription, {movieDesc: movie}),
-        			React.createElement(MoviePoster, {moviePoster: movie})
+        			React.createElement(MovieTitle, {movieTitle: movie.title}),
+        			React.createElement(MovieDescription, {movieDesc: movie.desc}),
+        			React.createElement(MoviePoster, {moviePoster: movie.poster})
       			);
     		});
 
     		return (
       			React.createElement('div', {},
       				React.createElement('h1', {}, 'Lista filmów:'),
-      				React.createElement('ul', {}, contacts)
+      				React.createElement('ul', {}, movies)
       			)
     		);
-  	}	
+ 	 }	
 });
 
 var MovieTitle = React.createClass({
 	propTypes: {
-    		movieTitle: React.PropTypes.object.isRequired,
-  },
+    		movieTitle: React.PropTypes.string.isRequired,
+ 	},
 
-  render: function() {
-    return React.createElement('h2', {}, this.props.movieTitle.title);
-  }
+  	render: function() {
+    		return React.createElement('h2', {}, this.props.movieTitle);
+  	}
 });
 
 var MovieDescription = React.createClass({
 	propTypes: {
-    		movieDesc: React.PropTypes.object.isRequired,
-  },
+    		movieDesc: React.PropTypes.string.isRequired,
+  	},
 
-  render: function() {
-    return React.createElement('p', {}, this.props.movieDesc.desc);
-  }
+  	render: function() {
+    		return React.createElement('p', {}, this.props.movieDesc);
+  	}
 });
 
 var MoviePoster = React.createClass({
 	propTypes: {
-    		moviePoster: React.PropTypes.object.isRequired,
-  },
+    		moviePoster: React.PropTypes.string.isRequired,
+  	},
 
-  render: function() {
-    return React.createElement('img', {src: this.props.moviePoster.poster, height: 300, width: 200});
-  }
+  	render: function() {
+    		return React.createElement('img', {src: this.props.moviePoster, height: 300, width: 200});
+  	}
 });
 
 var moviesElement = React.createElement(Movie, {movies: movies});
