@@ -1,6 +1,6 @@
 var movies = [
 	{
-    id: 1,
+    		id: 1,
 		title: 'Harry Potter',
 		desc: 'Film o czarodzieju',
 		poster: 'https://ia.media-imdb.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg'
@@ -51,7 +51,7 @@ var Movie = React.createClass({
 
 var MovieTitle = React.createClass({
 	propTypes: {
-    movieTitle: React.PropTypes.object.isRequired,
+    		movieTitle: React.PropTypes.object.isRequired,
   },
 
   render: function() {
@@ -61,7 +61,7 @@ var MovieTitle = React.createClass({
 
 var MovieDescription = React.createClass({
 	propTypes: {
-    movieDesc: React.PropTypes.object.isRequired,
+    		movieDesc: React.PropTypes.object.isRequired,
   },
 
   render: function() {
@@ -71,7 +71,7 @@ var MovieDescription = React.createClass({
 
 var MoviePoster = React.createClass({
 	propTypes: {
-    moviePoster: React.PropTypes.object.isRequired,
+    		moviePoster: React.PropTypes.object.isRequired,
   },
 
   render: function() {
